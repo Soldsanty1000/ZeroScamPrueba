@@ -7,14 +7,9 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    var userEmail: String = ""
-    var userPassword: String = ""
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        userEmail = UserDefaults.standard.string(forKey: "email")!
-        userPassword = UserDefaults.standard.string(forKey: "password")!
-        print("User: \(userEmail), Password: \(userPassword)")
+        // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -23,10 +18,11 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func savedReportsTapped(_ sender: Any) {
-        let navigationController = self.navigationController!
-        let tabBarController = navigationController.viewControllers.first(where: { $0 is UITabBarController }) as! UITabBarController
-        let profileVC = tabBarController.viewControllers?.compactMap({ $0 as? ProfileViewController }).first!
-        profileVC.showGuardados()
+        guard let navigationController else { return }
+        guard let tabBarController = navigationController.viewControllers.first(where: { $0 is UITabBarController }) as? UITabBarController else { return }
+        if let profileVC = tabBarController.viewControllers?.compactMap({ $0 as? ProfileViewController }).first {
+            profileVC.showGuardados()
+        }
         tabBarController.selectedIndex = 3
         navigationController.popToViewController(tabBarController, animated: true)
     }
