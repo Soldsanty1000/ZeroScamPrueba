@@ -11,7 +11,7 @@ class SignOutViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        iconImageView!.image = UIImage(named: "signout")!
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -20,7 +20,8 @@ class SignOutViewController: UIViewController {
     }
 
     @IBAction func confirmTapped(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
+        print("User signed out")
+        navigationController!.popToRootViewController(animated: true)
     }
 
     @IBAction func cancelTapped(_ sender: Any) {
