@@ -33,16 +33,12 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginSubmitTapped(_ sender: UIButton) {
-        let email = emailField.text!
-        let password = passwordField.text!
-        print("Attempting login with: \(email) / \(password)")
-
-        let isCorrect = email == demoEmail && password == demoPassword
+        let isCorrect = emailField.text == demoEmail && passwordField.text == demoPassword
         errorLabel.isHidden = isCorrect
 
         guard isCorrect else { return }
 
-        let tabBarController = storyboard!.instantiateViewController(withIdentifier: "MainTabBarController")
-        navigationController!.pushViewController(tabBarController, animated: true)
+        guard let tabBarController = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController") else { return }
+        navigationController?.pushViewController(tabBarController, animated: true)
     }
 }
