@@ -20,7 +20,7 @@ class SearchViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(xxx, animated: animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         if let presetQuery {
             searchField.text = presetQuery
             self.presetQuery = nil
