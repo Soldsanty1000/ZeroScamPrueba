@@ -31,13 +31,15 @@ class ReportViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        urlField.applyOfraudeStyle()
-        customFraudTypeField.applyOfraudeStyle()
-        otherPersonNameField.applyOfraudeStyle()
-        otherPersonContactField.applyOfraudeStyle()
-        otherPersonCityField.applyOfraudeStyle()
+        urlField.apply0fraudeStyle()
+        customFraudTypeField.apply0fraudeStyle()
+        otherPersonNameField.apply0fraudeStyle()
+        otherPersonContactField.apply0fraudeStyle()
+        otherPersonCityField.apply0fraudeStyle()
+        for field in [urlField, customFraudTypeField, otherPersonNameField, otherPersonContactField, otherPersonCityField] {
+            field?.delegate = self
+        }
         descriptionTextView.delegate = self
-        hideKeyboardOnTap()
         select(whoButtons.first, in: whoButtons)
         select(fraudTypeButtons.first, in: fraudTypeButtons)
     }
@@ -76,6 +78,13 @@ class ReportViewController: UIViewController {
 
     @IBAction func submitTapped(_ sender: Any) {
         // TODO: enviar reporte
+    }
+}
+
+extension ReportViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
