@@ -16,7 +16,7 @@ class ChangePasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         [currentPasswordField, newPasswordField, confirmPasswordField].forEach {
-            $0?.applyOfraudeStyle()
+            $0?.apply0fraudeStyle()
         }
         hideKeyboardOnTap()
     }
