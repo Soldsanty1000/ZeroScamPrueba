@@ -15,8 +15,8 @@ class EditProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameField.applyOfraudeStyle()
-        emailField.applyOfraudeStyle()
+        usernameField.apply0fraudeStyle()
+        emailField.apply0fraudeStyle()
         hideKeyboardOnTap()
     }
 
