@@ -11,8 +11,8 @@ class ReportDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        commentField.applyOfraudeStyle()
-        hideKeyboardOnTap()
+        commentField.apply0fraudeStyle()
+        commentField.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -34,5 +34,12 @@ class ReportDetailViewController: UIViewController {
 
     @IBAction func postCommentTapped(_ sender: Any) {
         // TODO: publicar comentario
+    }
+}
+
+extension ReportDetailViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
