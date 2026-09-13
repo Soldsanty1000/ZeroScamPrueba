@@ -77,7 +77,17 @@ class ReportViewController: UIViewController {
     }
 
     @IBAction func submitTapped(_ sender: Any) {
-        // TODO: enviar reporte
+        let alert = UIAlertController(
+            title: "Confirmar reporte",
+            message: "¿Seguro que deseas enviar este reporte de fraude?",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Enviar", style: .default) { [weak self] _ in
+            // TODO: enviar reporte
+            self?.navigationController?.popViewController(animated: true)
+        })
+        present(alert, animated: true)
     }
 }
 
