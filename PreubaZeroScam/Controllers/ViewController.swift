@@ -18,8 +18,8 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailField.applyOfraudeStyle()
-        passwordField.applyOfraudeStyle()
+        emailField.apply0fraudeStyle()
+        passwordField.apply0fraudeStyle()
         hideKeyboardOnTap()
     }
 
