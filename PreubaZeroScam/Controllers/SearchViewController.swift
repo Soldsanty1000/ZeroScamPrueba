@@ -14,8 +14,8 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchField.applyOfraudeStyle()
-        hideKeyboardOnTap()
+        searchField.apply0fraudeStyle()
+        searchField.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -25,5 +25,12 @@ class SearchViewController: UIViewController {
             searchField.text = presetQuery
             self.presetQuery = nil
         }
+    }
+}
+
+extension SearchViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
