@@ -1,18 +1,42 @@
 //
 //  HomeViewController.swift
-//  PreubaZeroScam
-//
-//  Created by José López Flores on 13/09/26.
+//  PrototipoApp
 //
 
-import SwiftUI
+import UIKit
 
-struct HomeViewController: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class HomeViewController: UIViewController {
+
+    @IBOutlet weak var verifiedIcon: UIImageView!
+    @IBOutlet weak var avatarIcon: UIImageView!
+    @IBOutlet weak var ctaIcon: UIImageView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
     }
-}
 
-#Preview {
-    HomeViewController()
+    @IBAction func phishingCategoryTapped(_ sender: Any) {
+        openSearchTab(withQuery: "Ofertas Falsas")
+    }
+
+    @IBAction func redesCategoryTapped(_ sender: Any) {
+        openSearchTab(withQuery: "Sorteos Falsos")
+    }
+
+    @IBAction func identidadCategoryTapped(_ sender: Any) {
+        openSearchTab(withQuery: "Tiendas Clonadas")
+    }
+
+    private func openSearchTab(withQuery query: String) {
+        guard let tabBarController else { return }
+        if let searchVC = tabBarController.viewControllers?.compactMap({ $0 as? SearchViewController }).first {
+            searchVC.presetQuery = query
+        }
+        tabBarController.selectedIndex = 1
+    }
+
+    @IBAction func reportCTATapped(_ sender: Any) {
+        tabBarController?.selectedIndex = 2
+    }
 }
