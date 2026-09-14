@@ -15,7 +15,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         [usernameField, emailField, passwordField, confirmPasswordField].forEach {
-            $0?.applyOfraudeStyle()
+            $0?.apply0fraudeStyle()
         }
         hideKeyboardOnTap()
     }
