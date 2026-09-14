@@ -60,4 +60,25 @@ class ProfileViewController: UIViewController {
     @IBAction func removeFromSaved2Tapped(_ sender: Any) {
         guardadosCard2.isHidden = true
     }
+
+    @IBAction func editDeleteReport1Tapped(_ sender: UIButton) {
+        showEditDeleteOptions(for: sender, reportTitle: "Descuento falso de laptop en tienda clonada")
+    }
+
+    @IBAction func editDeleteReport2Tapped(_ sender: UIButton) {
+        showEditDeleteOptions(for: sender, reportTitle: "Oferta falsa 2x1 en boletos de concierto por Instagram")
+    }
+
+    private func showEditDeleteOptions(for sender: UIButton, reportTitle: String) {
+        let alert = UIAlertController(title: reportTitle, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Editar", style: .default) { _ in
+
+        })
+        alert.addAction(UIAlertAction(title: "Eliminar", style: .destructive) { _ in
+            sender.superview?.isHidden = true
+        })
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
+        alert.popoverPresentationController?.sourceView = sender
+        present(alert, animated: true)
+    }
 }
