@@ -22,7 +22,7 @@ class RegisterViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(xxx, animated: animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
     @IBAction func createAccountTapped(_ sender: UIButton) {
