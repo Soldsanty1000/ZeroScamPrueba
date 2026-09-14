@@ -16,6 +16,11 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(xxx, animated: animated)
+    }
+
     @IBAction func phishingCategoryTapped(_ sender: Any) {
         openSearchTab(withQuery: "Ofertas Falsas")
     }
