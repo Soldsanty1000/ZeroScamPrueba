@@ -1,6 +1,6 @@
 //
 //  PrivacyViewController.swift
-//  PrototipoApp
+//  PrototipoZeroScam
 //
 
 import UIKit
