@@ -19,4 +19,13 @@ class RegisterViewController: UIViewController {
         }
         hideKeyboardOnTap()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(xxx, animated: animated)
+    }
+
+    @IBAction func createAccountTapped(_ sender: UIButton) {
+        // TODO: crear cuenta
+    }
 }
