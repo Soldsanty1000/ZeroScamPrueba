@@ -1,6 +1,6 @@
 //
 //  HomeViewController.swift
-//  PrototipoApp
+//  PrototipoZeroScam
 //
 
 import UIKit
@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(xxx, animated: animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
     @IBAction func phishingCategoryTapped(_ sender: Any) {
