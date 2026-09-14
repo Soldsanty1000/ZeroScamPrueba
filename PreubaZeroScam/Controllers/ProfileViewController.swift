@@ -25,4 +25,39 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(xxx, animated: animated)
+    }
+
+    func showGuardados() {
+        guardadosTabTapped(xxx)
+    }
+
+    @IBAction func misReportesTabTapped(_ sender: Any) {
+        tab1Button.setTitleColor(activeTabColor, for: .normal)
+        tab2Button.setTitleColor(inactiveTabColor, for: .normal)
+        misReportesCard1.isHidden = false
+        misReportesCard2.isHidden = false
+        guardadosCard1.isHidden = true
+        guardadosCard2.isHidden = true
+    }
+
+    @IBAction func guardadosTabTapped(_ sender: Any) {
+        tab1Button.setTitleColor(inactiveTabColor, for: .normal)
+        tab2Button.setTitleColor(activeTabColor, for: .normal)
+        misReportesCard1.isHidden = true
+        misReportesCard2.isHidden = true
+        guardadosCard1.isHidden = false
+        guardadosCard2.isHidden = false
+    }
+
+    @IBAction func removeFromSaved1Tapped(_ sender: Any) {
+        guardadosCard1.isHidden = true
+    }
+
+    @IBAction func removeFromSaved2Tapped(_ sender: Any) {
+        guardadosCard2.isHidden = true
+    }
 }
