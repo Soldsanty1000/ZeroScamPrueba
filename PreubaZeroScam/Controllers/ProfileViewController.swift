@@ -1,6 +1,6 @@
 //
 //  ProfileViewController.swift
-//  PrototipoApp
+//  PrototipoZeroScam
 //
 
 import UIKit
